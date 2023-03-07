@@ -32,7 +32,7 @@ install_aur_helper(){
 }
 install_pkgs(){
     echo -e "${green}[*] Installing packages with pacman.${no_color}"
-    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop code dunst feh firefox i3-gaps libnotify light mpc mpd ncmpcpp nemo neofetch neovim pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf zsh
+    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-gaps libnotify light mpc mpd ncmpcpp nemo neofetch neovim pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf zsh
 }
 install_aur_pkgs(){
     echo -e "${green}[*] Installing packages with $aurhelper.${no_color}"
@@ -95,7 +95,7 @@ copy_other_configs(){
 }
 install_additional_pkgs(){
     echo -e "${green}[*] Installing additional packages with $aurhelper.${no_color}"
-    "$aurhelper" -S --noconfirm --needed dhcpcd gimp iwd libreoffice ntfs-3g ntp pulsemixer vnstat
+    "$aurhelper" -S --noconfirm --needed gimp iwd vnstat
 }
 install_emoji_fonts(){
     echo -e "${green}[*] Installing emoji fonts with $aurhelper.${no_color}"
@@ -107,10 +107,10 @@ install_sddm(){
     echo -e "${green}[*] Installing sddm theme.${no_color}"
     "$aurhelper" -S --noconfirm --needed qt5-graphicaleffects qt5-quickcontrols2 qt5-svg sddm
     sudo systemctl enable sddm.service
-    sudo git clone https://github.com/keyitdev/sddm-flower-theme.git /usr/share/sddm/themes/sddm-flower-theme
-    sudo cp /usr/share/sddm/themes/sddm-flower-theme/Fonts/* /usr/share/fonts/
+    sudo git clone https://github.com/Othrondir/sddm-theme /usr/share/sddm/themes/sddm-theme
+    sudo cp /usr/share/sddm/themes/sddm-theme/Fonts/* /usr/share/fonts/
     echo "[Theme]
-    Current=sddm-flower-theme" | sudo tee /etc/sddm.conf
+    Current=sddm-theme" | sudo tee /etc/sddm.conf
 }
 finishing(){
     echo -e "${green}[*] Chmoding light.${no_color}"
@@ -144,7 +144,7 @@ options=(1 "System update" on
          10 "Copy other configs (gtk theme, wallpaper, vsc configs, zsh configs)" on
          11 "Install additional packages" off
          12 "Install emoji fonts" off
-         13 "Install sddm with flower theme" off
+         13 "Install sddm with custom theme" off
          14 "Make Light executable, set zsh as default shell, update nvim extensions." on)
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 
