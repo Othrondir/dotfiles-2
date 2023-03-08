@@ -32,11 +32,11 @@ install_aur_helper(){
 }
 install_pkgs(){
     echo -e "${green}[*] Installing packages with pacman.${no_color}"
-    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-gaps libnotify light mpc mpd ncmpcpp nemo neofetch neovim pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zathura zathura-pdf-mupdf zsh
+    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel bluez bluez-utils blueman code curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-gaps libnotify light mpc mpd ncmpcpp nemo neofetch neovim pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip zsh
 }
 install_aur_pkgs(){
     echo -e "${green}[*] Installing packages with $aurhelper.${no_color}"
-    "$aurhelper" -S --noconfirm --needed i3lock-color i3-resurrect ffcast oh-my-zsh-git
+    "$aurhelper" -S --noconfirm --needed i3lock-color i3-resurrect ffcast libwacom-surface oh-my-zsh-git yacreader
 }
 create_default_directories(){
     echo -e "${green}[*] Copying configs to $config_directory.${no_color}"
@@ -95,7 +95,7 @@ copy_other_configs(){
 }
 install_additional_pkgs(){
     echo -e "${green}[*] Installing additional packages with $aurhelper.${no_color}"
-    "$aurhelper" -S --noconfirm --needed gimp iwd vnstat
+    "$aurhelper" -S --noconfirm --needed gimp iwd vnstat cmatrix
 }
 install_emoji_fonts(){
     echo -e "${green}[*] Installing emoji fonts with $aurhelper.${no_color}"
@@ -113,6 +113,8 @@ install_sddm(){
     Current=sddm-theme" | sudo tee /etc/sddm.conf
 }
 finishing(){
+    sudo systemctl start bluetooth.service
+    sudo systemctl enable bluetooth.service
     echo -e "${green}[*] Chmoding light.${no_color}"
     sudo chmod +s /usr/bin/light
     echo -e "${green}[*] Setting Zsh as default shell.${no_color}"
