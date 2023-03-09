@@ -4,7 +4,7 @@
 
 Clone the repository.
 ```sh
-git clone -b v3 --depth 1 https://www.github.com/keyitdev/dotfiles.git
+git clone -b v3 --depth 1 https://www.github.com/Othrondir/dotfiles-2.git
 cd dotfiles
 chmod +x install-on-arch.sh
 ./install-on-arch.sh
