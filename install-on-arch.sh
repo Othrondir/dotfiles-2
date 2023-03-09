@@ -36,7 +36,7 @@ install_pkgs(){
 }
 install_aur_pkgs(){
     echo -e "${green}[*] Installing packages with $aurhelper.${no_color}"
-    "$aurhelper" -S --noconfirm --needed i3lock-color i3-resurrect ffcast libpdfium-nojs libunarr libwacom-surface oh-my-zsh-git
+    "$aurhelper" -S --noconfirm --needed i3lock-color i3-resurrect ffcast libwacom-surface oh-my-zsh-git sublime-text-4
 }
 create_default_directories(){
     echo -e "${green}[*] Copying configs to $config_directory.${no_color}"
