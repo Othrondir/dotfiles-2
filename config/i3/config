@@ -6,6 +6,7 @@
 set $mod Mod4
 
 # set font
+exec --no-startup-id onboard &
 font pango:Open sans 11
 
 ### Runnig apps in background ###
@@ -30,7 +31,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id battery&
 
 # start i3 components
-exec --no-startup-id onboard &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
