@@ -71,9 +71,14 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 The following repositories aim to help you keep your kernel and accompanying software up-to-date. To this end, the Debian, Arch Linux, and Fedora repositories provide the latest kernels pre-compiled as binary packages and pre-signed for secure boot (see the secure boot page).
 
 https://aur.archlinux.org/packages/surface-control
-https://aur.archlinux.org/packages/surface-dtx-daemon
 ```
 sudo pacman -Syu
+sudo pacman -Sc
+sudo pacman -Scc
+paccache -r
+sudo pacman -Qtdq | sudo pacman -Rns -
+sudo du -sh ~/.cache/
+rm -rf ~/.cache/*
 ```
 
 ##  5-Desktop environment
@@ -150,22 +155,4 @@ Note: `Win` refers to the `Super/Mod` key.
 
 </details>
 
-## Support and Thankies
-
-You can support me simply by dropping a **star** on **[github](https://github.com/Keyitdev/dotfiles/tree/v3)** or giving a **subscription** on **[YouTube](http://www.youtube.com/channel/UCVoGVyAP2sHPQyegwBMJKyQ?sub_confirmation=1)**.
-
-<!-- If you enjoyed it and would like to show your appreciation, you can **tip** using **[kofi]()** or **[paypal]()**. -->
-
-**Big thanks to:**
-[adi1090x](https://github.com/adi1090x),
-[Totoro](https://github.com/totoro-ghost).
-
-Thanks to all contributors! :D
-
-## Contributions
-
-Feel free to create issue or pull request.    
-If you need any help, you can ask questions here on **[discussions](https://github.com/Keyitdev/dotfiles/discussions/categories/q-a)** or contact me on **[discord](https://discord.com/users/908702082578665474)** / **[reddit](https://www.reddit.com/user/Keyitdev)**.
-
-Distributed under the **[GPLv3+](https://www.gnu.org/licenses/gpl-3.0.html) License**.    
 Copyright (C) 2022 Keyitdev.
