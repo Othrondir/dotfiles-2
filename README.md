@@ -71,9 +71,14 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 The following repositories aim to help you keep your kernel and accompanying software up-to-date. To this end, the Debian, Arch Linux, and Fedora repositories provide the latest kernels pre-compiled as binary packages and pre-signed for secure boot (see the secure boot page).
 
 https://aur.archlinux.org/packages/surface-control
-https://aur.archlinux.org/packages/surface-dtx-daemon
 ```
 sudo pacman -Syu
+sudo pacman -Sc
+sudo pacman -Scc
+paccache -r
+sudo pacman -Qtdq | sudo pacman -Rns -
+sudo du -sh ~/.cache/
+rm -rf ~/.cache/*
 ```
 
 ##  5-Desktop environment
