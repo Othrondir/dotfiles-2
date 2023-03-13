@@ -32,7 +32,7 @@ install_aur_helper(){
 }
 install_pkgs(){
     echo -e "${green}[*] Installing packages with pacman.${no_color}"
-    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel bluez bluez-utils blueman code curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-gaps libnotify libinput light mpc mpd ncmpcpp nemo neofetch neovim onboard pacman-contrib papirus-icon-theme picom polybar ranger rofi scrot slop xclip xournalpp zsh
+    sudo pacman -S --noconfirm --needed acpi alsa-utils base-devel bluez bluez-utils blueman cmus code curl git pulseaudio pulseaudio-alsa xorg xorg-xinit alacritty btop dunst feh firefox i3-gaps libnotify libinput light mpc mpd ncmpcpp nemo neofetch neovim onboard pacman-contrib papirus-icon-theme thermald picom polybar ranger rofi scrot slop xclip xournalpp zsh
 }
 install_aur_pkgs(){
     echo -e "${green}[*] Installing packages with $aurhelper.${no_color}"
